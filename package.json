@@ -1,0 +1,21 @@
+{
+  "name": "knockout-components",
+  "version": "0.0.0",
+  "description": "sandbox to test knockoout components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CesarNobre/knockout-components.git"
+  },
+  "author": "Cesar Nobre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CesarNobre/knockout-components/issues"
+  },
+  "devDependencies": {
+    "bower": "~1.7.7"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "knockout-components",
+  "description": "sandbox to test knockoout components",
+  "main": "index.js",
+  "authors": [
+    "Cesar Nobre"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/CesarNobre/knockout-components",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
