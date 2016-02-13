@@ -1,6 +1,10 @@
-requirejs(["bower_components/knockout/dist/knockout.debug.js"], function(ko) {
-    //This function is called when scripts/helper/util.js is loaded.
-    //If util.js calls define(), then this function is not fired until
-    //util's dependencies have loaded, and the util argument will hold
-    //the module value for "helper/util".
+requirejs.config({
+    baseUrl: 'assets/js/',
+    paths: {
+        'do-task': 'components/do-task',
+        'text':'../../bower_components/text/text',
+    }
 });
+
+
+requirejs(['do-task']);
