@@ -12,6 +12,10 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 			self.tasks.push(task);
 			self.task('');
 		}
+
+		self.DeleteTask = function(task){
+ 			self.tasks.splice(task.index);
+ 		}
 	}
 
 	ko.components.register('do-task', {
