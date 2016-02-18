@@ -1,4 +1,4 @@
-define(['require','text!do-task.html','knockout','Task'],function (require, doTaskTemplate){
+define(['require','text!do-task.html','knockout','Task'], function (require, doTaskTemplate){
 	var ko = require('knockout');
 	var Task = require('Task');
 
@@ -11,6 +11,10 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 			var task = new Task(self.task());
 			self.tasks.push(task);
 			self.task('');
+		}
+
+		self.DeleteTask = function(task){
+			self.tasks.splice(task.index);
 		}
 	}
 
