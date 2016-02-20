@@ -3,7 +3,7 @@ define(function (require){
 
 	function Task(description){
 		var self = this;
- 
+ 		
  		self.description = ko.observable(description);
  		self.done = ko.observable();
  

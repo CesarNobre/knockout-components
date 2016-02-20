@@ -14,10 +14,18 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 		}
 
 		self.DeleteTask = function(task){
- 			self.tasks.splice(task.index);
+			var itemToRemove = self.tasks().filter(function(item, index){
+				if(item.description() == task.description()) 
+					return item.index = index;
+			});
+ 			self.tasks.splice(itemToRemove[0].index);
+ 		}
+
+ 		var filterClickedTask = function(array, taskClicked){
+ 			return array.description() == taskClicked.description();
  		}
 	}
-	
+
 	ko.components.register('do-task', {
     	viewModel: viewModel,
     	template: doTaskTemplate
