@@ -17,7 +17,7 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
  			self.tasks.splice(task.index);
  		}
 	}
-
+	
 	ko.components.register('do-task', {
     	viewModel: viewModel,
     	template: doTaskTemplate
