@@ -7,10 +7,11 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 		self.task = ko.observable('');
 		self.tasks = ko.observableArray();
 
-		self.SaveTask = function(){
+		self.SaveTask = function(task,element){
 			var task = new Task(self.task());
 			self.tasks.push(task);
 			self.task('');
+			document.querySelector('#typeTaskDescription').focus();
 		}
 
 		self.DeleteTask = function(task){

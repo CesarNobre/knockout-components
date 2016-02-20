@@ -1,8 +1,10 @@
 <div>
 	Type your tasks!
 	<br><br>
-	Task:<input type="text" data-bind="value:task">
-	<input type="button" value="Send" data-bind="click:SaveTask">
+	<form>
+		Task:<input type="text" id="typeTaskDescription" data-bind="value:task">
+		<input type="submit" value="Send" data-bind="click:SaveTask">	
+	</form>
 </div>
 
 <div data-bind="foreach:tasks">
