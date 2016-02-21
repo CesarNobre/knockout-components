@@ -5,15 +5,25 @@ define(function (require){
 		var self = this;
  		
  		self.description = ko.observable(description);
- 		self.done = ko.observable();
- 
+ 		self.done = ko.observable(false);
+ 		self.actionName = ko.observable('Done');
+
  		self.TaskDone = function(){
- 			var toggledBoolean = self.done(toggleBoolean(self.done()));
+ 			var toggledBoolean = toggleBoolean(self.done());
  			self.done(toggledBoolean);
  		}
- 
+
  		var toggleBoolean = function(myBool){
- 			myBool = !myBool;
+ 			defineNameActionButton(myBool);
+ 			return !myBool;
+ 		}
+
+ 		var defineNameActionButton = function(doneTask){
+ 			if(doneTask){ 
+ 				self.actionName('Done')
+ 				return;
+ 			}
+ 			self.actionName('Undone');
  		}
 	}
 
