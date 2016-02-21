@@ -1,6 +1,19 @@
 .taskHasDone{
 	background-color: gray;
 }
+
 .taskUndone{
 	background-color: yellow;
+}
+
+.task{
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.container-tasks{
+	display: inline-flex;
+	width: 100%;
 }
