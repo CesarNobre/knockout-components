@@ -1,3 +1,6 @@
 .taskHasDone{
 	background-color: gray;
 }
+.taskUndone{
+	background-color: yellow;
+}

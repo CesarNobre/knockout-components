@@ -8,10 +8,10 @@
 </div>
 
 <div data-bind="foreach:tasks">
-	<div data-bind="css:{taskHasDone: done}">
+	<div data-bind="css:{taskHasDone: done() == true, taskUndone : done() == false}">
 		<span data-bind="text:$index"></span> - <span data-bind="text:description"></span>
 	 	<input type="button" value="Delete" data-bind="click:$parent.DeleteTask"> 
-	 	<input type="button" value="Done" data-bind="click:TaskDone"> 
+	 	<input type="button" value="Done" data-bind="click:TaskDone, value: actionName"> 
  	</div>
  	<br>
 </div>

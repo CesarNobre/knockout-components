@@ -19,7 +19,7 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 				if(item.description() == task.description()) 
 					return item.index = index;
 			});
- 			self.tasks.splice(itemToRemove[0].index);
+ 			self.tasks.splice(itemToRemove[0].index, 1);
  		}
 
  		var filterClickedTask = function(array, taskClicked){
