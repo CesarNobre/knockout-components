@@ -11,6 +11,7 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 			var task = new Task(self.task());
 			self.tasks.push(task);
 			self.task('');
+			localStorage.setItem("myTasks", ko.toJSON(self.tasks()));
 			document.querySelector('#typeTaskDescription').focus();
 		}
 
@@ -25,6 +26,16 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
  		var filterClickedTask = function(array, taskClicked){
  			return array.description() == taskClicked.description();
  		}
+
+ 		var loadTasks = function(){
+ 			var myTasks = JSON.parse(localStorage.getItem("myTasks"));
+ 			var allMyTasks = [];
+ 			myTasks.forEach(function(item){
+ 				var task = new Task(item.description);
+ 				allMyTasks.push(task);
+ 			})
+ 			self.tasks.push(allMyTasks);
+ 		}();
 	}
 
 	ko.components.register('do-task', {

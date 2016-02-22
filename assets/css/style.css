@@ -1,9 +1,9 @@
 .taskHasDone{
-	background-color: gray;
+	text-decoration: line-through;
 }
 
 .taskUndone{
-	background-color: yellow;
+	text-decoration: none;
 }
 
 .task{
