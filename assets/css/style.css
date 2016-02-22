@@ -7,13 +7,17 @@
 }
 
 .task{
-	width: 200px;
-	height: 100px;
+	background-color: #ECEFF1;
+	margin-top:2%;
+	margin-left: 5%;
+	padding: 15px 15px 0 15px;
+	width: 280px;
+	height: auto;
 	display: inline-block;
-	margin-left: 10px;
+	cursor: pointer;
 }
 
 .container-tasks{
-	display: inline-flex;
+	display: inline-block;
 	width: 100%;
 }
