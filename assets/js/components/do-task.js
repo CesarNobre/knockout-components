@@ -16,11 +16,12 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 		}
 
 		self.DeleteTask = function(task){
-			var itemToRemove = self.tasks().filter(function(item, index){
+			var indexToRemove;
+			var itemToRemove = self.tasks().forEach(function(item, index){
 				if(item.description() == task.description()) 
-					return item.index = index;
+					indexToRemove = index;
 			});
- 			self.tasks.splice(itemToRemove[0].index, 1);
+ 			self.tasks.splice(indexToRemove, 1);
 			localStorage.setItem("myTasks", ko.toJSON(self.tasks()));
  		}
 
