@@ -21,6 +21,7 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 					return item.index = index;
 			});
  			self.tasks.splice(itemToRemove[0].index, 1);
+			localStorage.setItem("myTasks", ko.toJSON(self.tasks()));
  		}
 
  		var filterClickedTask = function(array, taskClicked){
@@ -29,12 +30,10 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 
  		var loadTasks = function(){
  			var myTasks = JSON.parse(localStorage.getItem("myTasks"));
- 			var allMyTasks = [];
  			myTasks.forEach(function(item){
  				var task = new Task(item.description);
- 				allMyTasks.push(task);
+ 				self.tasks.push(task);
  			})
- 			self.tasks.push(allMyTasks);
  		}();
 	}
 
