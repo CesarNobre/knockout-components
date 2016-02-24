@@ -25,10 +25,6 @@ define(['require','text!do-task.html','knockout','Task'],function (require, doTa
 			localStorage.setItem("myTasks", ko.toJSON(self.tasks()));
  		}
 
- 		var filterClickedTask = function(array, taskClicked){
- 			return array.description() == taskClicked.description();
- 		}
-
  		var loadTasks = function(){
  			var myTasks = JSON.parse(localStorage.getItem("myTasks"));
  			myTasks.forEach(function(item){
