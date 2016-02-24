@@ -1,7 +1,8 @@
-define(['require','text!do-task.html','knockout','Task'],function (require, doTaskTemplate){
+define(['require','text!do-task.html','knockout','Task', 'storage'],function (require, doTaskTemplate){
 	var ko = require('knockout');
 	var Task = require('Task');
-
+	var storage = require('storage');
+	
 	function viewModel(){
 		var self = this;
 		self.task = ko.observable('');
