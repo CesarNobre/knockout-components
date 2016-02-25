@@ -1,18 +1,18 @@
-define(['require','text!do-task.html','knockout','Task', 'storage'],function (require, doTaskTemplate){
+define(['require','text!do-task.html','storage','knockout','Task'],function (require, doTaskTemplate, storage){
 	var ko = require('knockout');
 	var Task = require('Task');
-	var storage = require('storage');
 	
 	function viewModel(){
 		var self = this;
 		self.task = ko.observable('');
 		self.tasks = ko.observableArray();
 
-		self.SaveTask = function(task,element){
+		self.SaveTask = function(task){
+			if(!self.task()){return;}
 			var task = new Task(self.task());
 			self.tasks.push(task);
 			self.task('');
-			localStorage.setItem("myTasks", ko.toJSON(self.tasks()));
+			storage.save("myTasks", self.tasks());
 			document.querySelector('#typeTaskDescription').focus();
 		}
 
@@ -27,7 +27,7 @@ define(['require','text!do-task.html','knockout','Task', 'storage'],function (re
  		}
 
  		var loadTasks = function(){
- 			var myTasks = JSON.parse(localStorage.getItem("myTasks"));
+ 			var myTasks = storage.find("myTasks");
  			myTasks.forEach(function(item){
  				var task = new Task(item.description);
  				self.tasks.push(task);
