@@ -8,17 +8,17 @@ define(function (require){
  		self.done = ko.observable(false);
  		self.actionName = ko.observable('Done');
 
- 		self.TaskDone = function(){
+ 		self.FinishTask = function(){
  			var toggledBoolean = toggleBoolean(self.done());
  			self.done(toggledBoolean);
  		}
 
  		var toggleBoolean = function(myBool){
- 			defineNameActionButton(myBool);
+ 			defineActionNameButton(myBool);
  			return !myBool;
  		}
 
- 		var defineNameActionButton = function(doneTask){
+ 		var defineActionNameButton = function(doneTask){
  			if(doneTask){ 
  				self.actionName('Done')
  				return;

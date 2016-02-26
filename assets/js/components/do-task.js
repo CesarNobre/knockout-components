@@ -8,7 +8,7 @@ define(['require','text!do-task.html','storage','knockout','Task'],function (req
 		self.tasks = ko.observableArray();
 
 		self.SaveTask = function(task){
-			if(!self.task()){return;}
+			if(!self.task()) return;
 			var task = new Task(self.task());
 			self.tasks.push(task);
 			self.task('');
@@ -17,12 +17,9 @@ define(['require','text!do-task.html','storage','knockout','Task'],function (req
 		}
 
 		self.DeleteTask = function(task){
-			var indexToRemove;
-			var itemToRemove = self.tasks().forEach(function(item, index){
-				if(item.description() == task.description()) 
-					indexToRemove = index;
+			self.tasks().forEach(function(item, indexToRemove){
+				if(item.description() == task.description()) self.tasks.splice(indexToRemove, 1);
 			});
- 			self.tasks.splice(indexToRemove, 1);
 			localStorage.setItem("myTasks", ko.toJSON(self.tasks()));
  		}
 
