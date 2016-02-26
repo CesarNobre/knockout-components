@@ -8,18 +8,20 @@ define(['knockout'], function(ko){
 	}
 
 	var UpdateStatusTask = function(key, newValue){
-		oldValue = find(key);
+		oldValue = Find(key);
 
 		oldValue.forEach(function(item,index){
-			if(item.description() == newValue.description()){
-				item.done(newValue.done());
+			if(item.description == newValue.description()){
+				item.done = newValue.done();
 			}
 		});
+
+		Save(key, oldValue);
 	}
 
 	return {
-		Save : save,
-		Find : find,
+		Save : Save,
+		Find : Find,
 		UpdateStatusTask : UpdateStatusTask
 	}
 });
