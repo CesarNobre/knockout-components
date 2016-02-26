@@ -12,7 +12,7 @@ define(['require','text!do-task.html','storage','knockout','Task'],function (req
 			var task = new Task(self.task());
 			self.tasks.push(task);
 			self.task('');
-			storage.save("myTasks", self.tasks());
+			storage.Save("myTasks", self.tasks());
 			document.querySelector('#typeTaskDescription').focus();
 		}
 
@@ -24,7 +24,7 @@ define(['require','text!do-task.html','storage','knockout','Task'],function (req
  		}
 
  		var loadTasks = function(){
- 			var myTasks = storage.find("myTasks");
+ 			var myTasks = storage.Find("myTasks");
  			myTasks.forEach(function(item){
  				var task = new Task(item.description);
  				self.tasks.push(task);
