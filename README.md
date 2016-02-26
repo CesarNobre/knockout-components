@@ -1,7 +1,7 @@
 # knockout-components
 sandbox to experiment components in knockout.
 
-First add script above
+First add script below
 
  ```html 
  <script data-main="assets/js/main.js" src="bower_components/requirejs/require.js"></script>
