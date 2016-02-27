@@ -26,7 +26,7 @@ define(['require','text!do-task.html','storage','knockout','Task'],function (req
  		var loadTasks = function(){
  			var myTasks = storage.Find("myTasks");
  			myTasks.forEach(function(item){
- 				var task = new Task(item.description);
+ 				var task = new Task(item.description, item.done);
  				self.tasks.push(task);
  			})
  		}();

@@ -2,11 +2,11 @@ define(function (require){
 	var ko = require('knockout');
 	var storage = require('storage');
 
-	function Task(description){
+	function Task(description, hasDoneTask){
 		var self = this;
  		
  		self.description = ko.observable(description);
- 		self.done = ko.observable(false);
+ 		self.done = ko.observable(hasDoneTask || false);
  		self.actionName = ko.observable('Done');
 
  		self.FinishTask = function(){

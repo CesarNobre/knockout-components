@@ -4,7 +4,7 @@ define(['knockout'], function(ko){
 		localStorage.setItem(key, ko.toJSON(value));
 	}
 	var Find = function(key){
-		return JSON.parse(localStorage.getItem(key));
+		return JSON.parse(localStorage.getItem(key)) || [];
 	}
 
 	var UpdateStatusTask = function(key, newValue){
