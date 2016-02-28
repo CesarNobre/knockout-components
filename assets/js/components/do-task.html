@@ -1,8 +1,6 @@
 <div>
-	Type your tasks!
-	<br><br>
-	<form>
-		Task:<input type="text" id="typeTaskDescription" data-bind="value:task">
+	<form class="center">
+		<input type="text" id="typeTaskDescription" data-bind="value:task" placeholder="Type your task and press enter!">
 		<input type="submit" value="Send" data-bind="click:SaveTask">	
 	</form>
 </div>
@@ -12,7 +10,7 @@
 		<div class="task-body">
 			<span data-bind="text:$index"></span> - <span data-bind="text:description"></span>
 		</div>
-		<div class="task-footer">
+		<div class="task-footer center">
 			<input type="button" value="Delete" data-bind="click:$parent.DeleteTask"> 
 		 	<input type="button" value="Done" data-bind="click:FinishTask, value: actionName"> 	
 		</div>
