@@ -9,9 +9,12 @@
 
 <div class="container-tasks"data-bind="foreach:tasks">
 	<div class="task" data-bind="css:{taskHasDone: done() == true, taskUndone : done() == false}">
-		<span data-bind="text:$index"></span> - <span data-bind="text:description"></span>
-	 	<input type="button" value="Delete" data-bind="click:$parent.DeleteTask"> 
-	 	<input type="button" value="Done" data-bind="click:FinishTask, value: actionName"> 
+		<div class="task-body">
+			<span data-bind="text:$index"></span> - <span data-bind="text:description"></span>
+		</div>
+		<div class="task-footer">
+			<input type="button" value="Delete" data-bind="click:$parent.DeleteTask"> 
+		 	<input type="button" value="Done" data-bind="click:FinishTask, value: actionName"> 	
+		</div>
  	</div>
- 	<br>
 </div>
