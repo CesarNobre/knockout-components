@@ -38,4 +38,8 @@ define(['require','text!do-task.html','storage','knockout','Task'],function (req
 	});
 
 	ko.applyBindings(new viewModel());
+
+	return {
+		viewModel : viewModel
+	}
 });
