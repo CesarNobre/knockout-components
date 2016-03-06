@@ -1,16 +1,20 @@
 module.exports = function(grunt) {
   	grunt.initConfig({
 	connect: {
-    test : {
-      port : 8000
+	    server: {
+	      options: {
+	        port: 9001,
+	        base: '../knockout-components',
+	        keepalive:true
+	      }
 	    }
-	  },
+	},
 	jasmine: {
 	  taskName: {
 	    src: 'src/**/*.js',
 	    options: {
-	        specs: '/assets/js/components/tests/*spec.js',
-	        host: 'http://127.0.0.1:8000/',
+	        specs: 'assets/js/components/tests/*.spec.js',
+	        host: 'http://127.0.0.1:9001/',
 	        template: require('grunt-template-jasmine-requirejs'),
 	        templateOptions: {
 	        requireConfigFile: 'assets/js/main.js'
