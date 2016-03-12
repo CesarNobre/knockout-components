@@ -1,5 +1,5 @@
 # knockout-components
-sandbox to experiment components in knockout.
+sandbox to experiment components in knockout using AMD(Requirejs) 
 
 First add script below
 
